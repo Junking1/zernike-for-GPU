@@ -1,9 +1,10 @@
 function rad = Radialpoly(r,n,m)
-%rad:¾¶Ïò¶àÏîÊ½
-%r£º°ë¾¶
-%n£º½×Êı
-%m£ºÖØ¸´Êı
+%rad:å¾„å‘å¤šé¡¹å¼
+%rï¼šåŠå¾„
+%nï¼šé˜¶æ•°
+%mï¼šé‡å¤æ•°
 rad = zeros(size(r));
+
 
 for s = 0:(n-abs(m))/2
   c = (-1)^s*factorial(n-s)/(factorial(s)*factorial((n+abs(m))/2-s)*...
