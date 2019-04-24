@@ -1,10 +1,10 @@
 function [Z, Rad] = Zernikmoment(p,n,m)
-%¼ÆËãZernike¾Ø
-%Z:Zernike¾Ø
-%Rad:¾¶Ïò¶àÏîÊ½
-%p:NxNµÄ¶şÖµÍ¼Ïñ
-%n:Zernike½×Êı
-%m:ZernikeÖØ¸´Êı
+%è®¡ç®—ZernikeçŸ©
+%Z:ZernikeçŸ©
+%Rad:å¾„å‘å¤šé¡¹å¼
+%p:NxNçš„äºŒå€¼å›¾åƒ
+%n:Zernikeé˜¶æ•°
+%m:Zernikeé‡å¤æ•°
 N = size(p,1);
 x = 1:N; y = x;
 [X,Y] = meshgrid(x,y);
@@ -13,9 +13,10 @@ R = R./sqrt(2);
 
 Theta = atan2((N-1-2.*Y+2),(2.*X-N+1-2));
 R = (R<=1).*R;
-Rad = Radialpoly(R,n,m);    %¾¶Ïò¶àÏîÊ½
+Rad = Radialpoly(R,n,m);    %å¾„å‘å¤šé¡¹å¼
 Product = p(x,y).*Rad.*exp(-1i*m*Theta);
 Z = sum(Product(:));        
-cnt = nnz(R)+1;%¹éÒ»»¯Òò×Ó
+cnt = nnz(R)+1;%å½’ä¸€åŒ–å› å­
+
 Z = (n+1)*Z/cnt;
 
