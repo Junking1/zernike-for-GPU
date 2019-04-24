@@ -1,6 +1,7 @@
 function nmse = jun_NMSE(org_pic,cop_pic)
 len = length(org_pic);
 
+
 fenzi = 0;
 fenmu = 0;
 for i = 1:1:len
